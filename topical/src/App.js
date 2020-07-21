@@ -1,29 +1,34 @@
 import React from 'react'
 import './App.css'
-import Search from './components/NameSearch'
-import Typography from '@material-ui/core/Typography'
-import Container from '@material-ui/core/Container'
+import { Typography, Container, Grid } from '@material-ui/core'
 import BarcodeSearch from './components/BarcodeSearch'
 // import Login from './components/Login'
 // import Registration from './components/Registration'
-
+const containerStyles = {
+  height: '100vh',
+  overflow: 'auto',
+  textAlign: 'center',
+  padding: '5vh'
+}
 function App () {
   return (
-    <Container maxWidth='sm'>
-      <Typography variant='h2' gutterBottom>
+    <Grid container direction='column'>
+      <div style={containerStyles}>
+        <Typography variant='h2' gutterBottom>
         Topical
-      </Typography>
-      <Typography variant='h4' gutterBottom>
+        </Typography>
+        <Typography variant='h4' gutterBottom>
         To get started, scan a product or enter the UPC:
-      </Typography>
-      <BarcodeSearch />
-      <Typography variant='h4' gutterBottom>
+        </Typography>
+        <BarcodeSearch />
+        <Typography variant='h4' gutterBottom>
         Or search by product name:
-      </Typography>
-      <Typography variant='body1' gutterBottom>
+        </Typography>
+        <Typography variant='body1' gutterBottom>
         Add name search component
-      </Typography>
-    </Container>
+        </Typography>
+      </div>
+    </Grid>
   )
 }
 
