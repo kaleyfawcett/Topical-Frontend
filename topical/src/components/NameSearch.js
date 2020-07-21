@@ -7,7 +7,6 @@ import axios from 'axios'
 
 const Search = (props) => {
   const [productName, setProductName] = useState('')
-  const [upc, setUpc] = useState(0)
 
   return (
     <Box>

@@ -1,8 +1,9 @@
 import React from 'react'
 import './App.css'
-import Search from './components/Search'
+import Search from './components/NameSearch'
 import Typography from '@material-ui/core/Typography'
 import Container from '@material-ui/core/Container'
+import BarcodeSearch from './components/BarcodeSearch'
 // import Login from './components/Login'
 // import Registration from './components/Registration'
 
@@ -13,11 +14,9 @@ function App () {
         Topical
       </Typography>
       <Typography variant='h4' gutterBottom>
-        To get started, scan a product:
+        To get started, scan a product or enter the UPC:
       </Typography>
-      <Typography variant='body1' gutterBottom>
-        Add barcode component
-      </Typography>
+      <BarcodeSearch />
       <Typography variant='h4' gutterBottom>
         Or search by product name:
       </Typography>
