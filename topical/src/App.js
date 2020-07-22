@@ -4,6 +4,7 @@ import { Typography, Grid, Box } from '@material-ui/core'
 import BarcodeSearch from './components/BarcodeSearch'
 import NameSearch from './components/NameSearch'
 import { spacing } from '@material-ui/system'
+import QuaggaDisplay from './components/QuaggaDisplay'
 
 const containerStyles = {
   height: '100vh',
