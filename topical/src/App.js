@@ -1,9 +1,10 @@
 import React from 'react'
 import './App.css'
-import { Typography, Container, Grid } from '@material-ui/core'
+import { Typography, Grid, Box } from '@material-ui/core'
 import BarcodeSearch from './components/BarcodeSearch'
-// import Login from './components/Login'
-// import Registration from './components/Registration'
+import NameSearch from './components/NameSearch'
+import { spacing } from '@material-ui/system'
+
 const containerStyles = {
   height: '100vh',
   overflow: 'auto',
@@ -17,16 +18,16 @@ function App () {
         <Typography variant='h2' gutterBottom>
         Topical
         </Typography>
-        <Typography variant='h4' gutterBottom>
+        <Box m={6}>
+          <Typography variant='h4' gutterBottom>
         To get started, scan a product or enter the UPC:
-        </Typography>
-        <BarcodeSearch />
+          </Typography>
+          <BarcodeSearch />
+        </Box>
         <Typography variant='h4' gutterBottom>
         Or search by product name:
         </Typography>
-        <Typography variant='body1' gutterBottom>
-        Add name search component
-        </Typography>
+        <NameSearch />
       </div>
     </Grid>
   )
