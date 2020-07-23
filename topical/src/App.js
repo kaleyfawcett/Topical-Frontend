@@ -1,8 +1,7 @@
 import React from 'react'
 import './App.css'
 import { Typography, Grid, Box } from '@material-ui/core'
-// import BarcodeSearch from './components/BarcodeSearch'
-// import NameSearch from './components/NameSearch'
+import NameSearch from './components/NameSearch'
 import QuaggaDisplay from './components/QuaggaDisplay'
 
 const containerStyles = {
@@ -15,20 +14,19 @@ function App () {
   return (
     <Grid container direction='column'>
       <div style={containerStyles}>
-        {/* <Typography variant='h2' gutterBottom>
+        <Typography variant='h2' gutterBottom>
         Topical
-      </Typography>
+        </Typography>
         <Box m={6}>
-        <Typography variant='h4' gutterBottom>
+          <Typography variant='h4' gutterBottom>
         To get started, scan a product or enter the UPC:
           </Typography>
-        <BarcodeSearch />
-      </Box>
+          <QuaggaDisplay />
+        </Box>
         <Typography variant='h4' gutterBottom>
         Or search by product name:
-      </Typography>
-        <NameSearch /> */}
-        <QuaggaDisplay />
+        </Typography>
+        <NameSearch />
 
       </div>
     </Grid>
