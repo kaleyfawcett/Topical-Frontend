@@ -60,15 +60,13 @@ const Scanner = props => {
     })
 
     Quagga.onDetected(detected)
-  }, [])
+  })
 
   const detected = result => {
     onDetected(result.codeResult.code)
   }
 
   return (
-    // If you do not specify a target,
-    // QuaggaJS would look for an element that matches
     // the CSS selector #interactive.viewport
     <div id='interactive' className='viewport' />
   )
