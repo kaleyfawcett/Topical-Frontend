@@ -1,4 +1,5 @@
 import React from 'react'
+import { Grid } from '@material-ui/core'
 
 const containerStyles = {
   height: '100vh',
@@ -8,9 +9,11 @@ const containerStyles = {
 }
 function About () {
   return (
-    <div>
-      <h1>About</h1>
-    </div>
+    <Grid container direction='column'>
+      <div style={containerStyles}>
+        <h1>About</h1>
+      </div>
+    </Grid>
   )
 }
 
