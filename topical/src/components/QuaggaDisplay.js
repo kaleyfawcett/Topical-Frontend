@@ -5,7 +5,7 @@ import { Button, Box } from '@material-ui/core/'
 
 function QuaggaDisplay () {
   const [camera, setCamera] = useState(false)
-  const [result, setResult] = useState(null)
+  const [result, setResult] = useState('')
 
   const onDetected = result => {
     setResult(result)
