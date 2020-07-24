@@ -13,9 +13,6 @@ import MenuIcon from '@material-ui/icons/Menu'
 import CloseIcon from '@material-ui/icons/Close'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
 import { Link } from 'react-router-dom'
-import ProfilePage from './ProfilePage'
-import BarcodeSearch from './BarcodeSearch'
-import About from './About'
 
 const drawerWidth = 200
 const useStyles = makeStyles(theme => ({
