@@ -12,10 +12,7 @@ import ListItemText from '@material-ui/core/ListItemText'
 import MenuIcon from '@material-ui/icons/Menu'
 import CloseIcon from '@material-ui/icons/Close'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-import ProfilePage from './ProfilePage'
-import BarcodeSearch from './BarcodeSearch'
-import About from './About'
+import { Link } from 'react-router-dom'
 
 const drawerWidth = 200
 const useStyles = makeStyles(theme => ({
@@ -60,25 +57,17 @@ function Navigation () {
   }
   const drawer = (
     <div>
-      <Router>
-        <List>
-          <ListItem button component={Link} to='/profile'>
-            {/* <Route exact path='/profile' component={ProfilePage} /> */}
-            <ListItemText>Profile</ListItemText>
-          </ListItem>
-          <ListItem button component={Link} to='/search'>
-            <ListItemText>Search</ListItemText>
-          </ListItem>
-          <ListItem button component={Link} to='/about'>
-            <ListItemText>About</ListItemText>
-          </ListItem>
-        </List>
-        <div>
-          <Route exact path='/profile' component={ProfilePage} />
-          <Route exact path='/search' component={BarcodeSearch} />
-          <Route exact path='/about' component={About} />
-        </div>
-      </Router>
+      <List>
+        <ListItem button>
+          <ListItemText><Link to='/profile'>Profile</Link></ListItemText>
+        </ListItem>
+        <ListItem button>
+          <ListItemText><Link to='/'>Search</Link></ListItemText>
+        </ListItem>
+        <ListItem button>
+          <ListItemText><Link to='/about'>About</Link></ListItemText>
+        </ListItem>
+      </List>
     </div>
   )
   return (
