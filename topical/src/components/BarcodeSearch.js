@@ -10,15 +10,6 @@ const BarcodeSearch = () => {
   //   const [name, setName] = useState('')
   //   const [description, setDescription] = useState('')
 
-  const dataReturned = [
-    {
-      name: 'Dove Body Wash, Sensitive Skin',
-      upc: '011111122123',
-      description: '12 fl oz',
-      ingredients: []
-    }
-  ]
-
   const handleSubmit = (event) => {
     event.preventDefault()
     axios
