@@ -7,6 +7,8 @@ import InputAdornment from '@material-ui/core/InputAdornment'
 
 const BarcodeSearch = ({ result }) => {
   const [upc, setUpc] = useState('')
+  //   const [name, setName] = useState('')
+  //   const [description, setDescription] = useState('')
 
   const handleSubmit = (event) => {
     event.preventDefault()
