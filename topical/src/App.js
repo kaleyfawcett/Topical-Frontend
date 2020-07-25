@@ -4,7 +4,7 @@ import './App.css'
 import { Typography, Grid, Box } from '@material-ui/core'
 import BarcodeSearch from './components/BarcodeSearch'
 import NameSearch from './components/NameSearch'
-import { spacing } from '@material-ui/system'
+// import { spacing } from '@material-ui/system'
 import Navigation from './components/Navigation'
 
 const containerStyles = {
