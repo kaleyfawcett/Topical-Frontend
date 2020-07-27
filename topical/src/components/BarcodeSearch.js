@@ -13,9 +13,9 @@ const BarcodeSearch = ({ result }) => {
   const handleSubmit = (event) => {
     event.preventDefault()
     axios
-      .get(`https://shopical.herokuapp.com/api/search?upc=${upc}`, {
+      .get(`https://shopical.herokuapp.com/api/search?upc=${result}`, {
         upc: upc
-      }).then(res => res.product)
+      }).then(res => console.log(res))
   }
 
   return (
