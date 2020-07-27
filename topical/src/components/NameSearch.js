@@ -25,7 +25,7 @@ const Search = (props) => {
           InputProps={{
             endAdornment: (
               <InputAdornment>
-                <IconButton>
+                <IconButton type='submit'>
                   <SearchIcon />
                 </IconButton>
               </InputAdornment>
