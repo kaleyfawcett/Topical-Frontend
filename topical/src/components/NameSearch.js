@@ -20,12 +20,12 @@ const Search = (props) => {
     <div>
       <form onSubmit={handleSubmit}>
         <TextField
-          label='Enter Product Name:' value={productName} 
+          label='Enter Product Name:' value={productName}
           onChange={event => setProductName(event.target.value)}
           InputProps={{
             endAdornment: (
               <InputAdornment>
-                <IconButton>
+                <IconButton type='submit'>
                   <SearchIcon />
                 </IconButton>
               </InputAdornment>
