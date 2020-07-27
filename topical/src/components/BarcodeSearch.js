@@ -5,7 +5,7 @@ import IconButton from '@material-ui/core/IconButton'
 import SearchIcon from '@material-ui/icons/Search'
 import InputAdornment from '@material-ui/core/InputAdornment'
 
-const BarcodeSearch = () => {
+const BarcodeSearch = ({ result }) => {
   const [upc, setUpc] = useState('')
   //   const [name, setName] = useState('')
   //   const [description, setDescription] = useState('')
@@ -13,28 +13,27 @@ const BarcodeSearch = () => {
   const handleSubmit = (event) => {
     event.preventDefault()
     axios
-      .get(`https://shopical.herokuapp.com/api/search?upc=${upc}`, {
+      .get(`https://shopical.herokuapp.com/api/search?upc=${result}`, {
         upc: upc
-      }).then(res => res.product)
+      }).then(res => console.log(res))
   }
 
   return (
     <div>
       <form onSubmit={handleSubmit}>
         <TextField
-          label='Enter 12 digit UPC code' value={upc}
+          value={result}
           onChange={event => setUpc(event.target.value)}
           InputProps={{
             endAdornment: (
-              <InputAdornment>
-                <IconButton>
+              <InputAdornment position='start'>
+                <IconButton type='submit'>
                   <SearchIcon />
                 </IconButton>
               </InputAdornment>
             )
           }}
         />
-
       </form>
     </div>
   )
