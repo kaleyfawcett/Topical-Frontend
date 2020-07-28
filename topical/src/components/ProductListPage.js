@@ -11,9 +11,9 @@ const ProductList = ({ searchResults }) => {
   return (
     <Grid container direction='column'>
       <div style={containerStyles}>
-        {!searchResults.data ? (
+        {!searchResults ? (
           <h1>No results found</h1>
-        ) : (<h1>{searchResults.data.results[0].name}</h1>)}
+        ) : (<h1>{searchResults[0].name}</h1>)}
       </div>
     </Grid>
   )

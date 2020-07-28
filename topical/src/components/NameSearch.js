@@ -9,7 +9,7 @@ import ProductList from './ProductListPage'
 
 const Search = () => {
   const [productName, setProductName] = useState('')
-  const [result, setResult] = useState([])
+  const [result, setResult] = useState()
 
   const handleSubmit = async (event) => {
     try {
@@ -18,8 +18,7 @@ const Search = () => {
         .get(`https://shopical.herokuapp.com/api/search?name=${productName}`, {
           name: productName
         })
-      setResult(result)
-      return <Redirect to={`/productlist/${productName}`} />
+      setResult(result.data.results)
       // trigger ReactRouter to render the product list component
       // history.push({ pathname: `/ productlist / ${productName} `, state: { result: result } })
     } catch (error) {
@@ -43,6 +42,7 @@ const Search = () => {
           }}
         />
       </form>
+      <ProductList searchResults={result} />
     </div>
   )
 }
