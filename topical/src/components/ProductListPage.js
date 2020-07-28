@@ -3,13 +3,15 @@ import List from '@material-ui/core/List'
 // import ListItem from '@material-ui/core/ListItem'
 // import ListItemText from '@material-ui/core/ListItemText'
 
-function ProductList () {
+const ProductList = ({ results }) => {
   // function loadMoreItems(event) {
   //   if (event.target.scrollTop === event.target.scrollHeight)
   // }
   return (
     <div>
       <List
+      // {results.name}
+
         // onScroll={loadMoreItems}
         // style={{
         //   maxHeight: 300,

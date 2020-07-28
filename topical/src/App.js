@@ -11,8 +11,9 @@ import Home from './components/Home'
 import { ThemeProvider } from '@material-ui/core/styles'
 // import CssBaseline from '@material-ui/core/CssBaseline'
 import Theme from './components/Theme'
+import ProductList from './components/ProductListPage'
 
-function App () {
+function App ({ result, productName }) {
   return (
     <div>
       <ThemeProvider theme={Theme}>
@@ -23,6 +24,7 @@ function App () {
             <Route path='/profile' component={ProfilePage} />
             <Route path='/search' component={BarcodeSearch} />
             <Route path='/about' component={About} />
+            {/* <Route path={`/productlist/${productName}`} render={() => <ProductList result={result} />} /> */}
           </Switch>
         </Router>
       </ThemeProvider>

@@ -5,22 +5,22 @@ import List from '@material-ui/core/List'
 function Product (props) {
 //   const [name, setName] = useState('')
 //   const [imageURL, setimageURL] = useState('')
-  const product = this.props.product
+  const results = this.props.results
 
   return (
     <Grid container direction='column'>
       <div>
         <Typography variant='h4' gutterBottom>
-          {product.name}
+          {results.name}
         </Typography>
         <Typography variant='h5' gutterBottom>
-          {product.description}
+          {results.description}
         </Typography>
         <CardMedia>
-          {product.imageURL}
+          {results.imageURL}
         </CardMedia>
         <List>
-          {product.ingredients}
+          {results.ingredients}
         </List>
       </div>
     </Grid>
