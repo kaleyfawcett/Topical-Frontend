@@ -11,26 +11,16 @@ const Search = () => {
   const [productName, setProductName] = useState('')
   const [result, setResult] = useState([])
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault()
-    const result = await axios
+    axios
       .get(`https://shopical.herokuapp.com/api/search?name=${productName}`, {
         name: productName
-      })
+      }).then(result => setResult(result))
   }
-  if (!result) {
-    return
-    <h2>Error('Searching failed.')</h2>
-    
-  }
-  setResult(result)
-  history.push({ pathname: `/productlist/${productName}`, state: { result: result } })
-  } catch (error) {
-   console.error(error.message)
-  }
-  setLoading(false)
-  
-
+  // if (result) {
+  //   return <ProductList result={result} />
+  // } else if (!result) {
   return (
     <div>
       <form onSubmit={handleSubmit}>
