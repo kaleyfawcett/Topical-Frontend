@@ -1,17 +1,21 @@
 import React from 'react'
-// import List from '@material-ui/core/List'
-// import ListItem from '@material-ui/core/ListItem'
-// import ListItemText from '@material-ui/core/ListItemText'
+import { Grid } from '@material-ui/core'
 
-const ProductList = ({ results }) => {
-  // function loadMoreItems(event) {
-  //   if (event.target.scrollTop === event.target.scrollHeight)
-  // }
+const ProductList = ({ searchResults }) => {
+  const containerStyles = {
+    height: '100vh',
+    overflow: 'auto',
+    textAlign: 'center',
+    padding: '5vh'
+  }
   return (
-    <div>
-      <h2>hellooooo</h2>
-
-    </div>
+    <Grid container direction='column'>
+      <div style={containerStyles}>
+        {!searchResults.data ? (
+          <h1>No results found</h1>
+        ) : (<h1>{searchResults.data.results[0].name}</h1>)}
+      </div>
+    </Grid>
   )
 }
 
