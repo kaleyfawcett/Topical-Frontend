@@ -1,5 +1,5 @@
 import React from 'react'
-import List from '@material-ui/core/List'
+// import List from '@material-ui/core/List'
 // import ListItem from '@material-ui/core/ListItem'
 // import ListItemText from '@material-ui/core/ListItemText'
 
@@ -9,24 +9,8 @@ const ProductList = ({ results }) => {
   // }
   return (
     <div>
-      <List
-      // {results.name}
+      <h2>hellooooo</h2>
 
-        // onScroll={loadMoreItems}
-        // style={{
-        //   maxHeight: 300,
-        //   overflowY: 'scroll'
-        // }}
-      >
-        {/* {
-          this.props.products.map(product => (
-            <productName
-              key={product.id}
-              product={product}
-            />
-          ))
-        } */}
-      </List>
     </div>
   )
 }

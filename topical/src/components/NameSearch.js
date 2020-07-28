@@ -11,16 +11,21 @@ const Search = () => {
   const [productName, setProductName] = useState('')
   const [result, setResult] = useState([])
 
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    axios
-      .get(`https://shopical.herokuapp.com/api/search?name=${productName}`, {
-        name: productName
-      }).then(result => setResult(result))
+  const handleSubmit = async (event) => {
+    try {
+      event.preventDefault()
+      const result = await axios
+        .get(`https://shopical.herokuapp.com/api/search?name=${productName}`, {
+          name: productName
+        })
+      setResult(result)
+      return <Redirect to={`/productlist/${productName}`} />
+      // trigger ReactRouter to render the product list component
+      // history.push({ pathname: `/ productlist / ${productName} `, state: { result: result } })
+    } catch (error) {
+      console.error(error.message)
+    }
   }
-  // if (result) {
-  //   return <ProductList result={result} />
-  // } else if (!result) {
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -38,9 +43,7 @@ const Search = () => {
           }}
         />
       </form>
-
     </div>
   )
 }
-
 export default Search

@@ -24,7 +24,7 @@ function App ({ result, productName }) {
             <Route path='/profile' component={ProfilePage} />
             <Route path='/search' component={BarcodeSearch} />
             <Route path='/about' component={About} />
-            {/* <Route path={`/productlist/${productName}`} render={() => <ProductList result={result} />} /> */}
+            <Route path={`/productlist/${productName}`} render={() => <ProductList result={result} />} />
           </Switch>
         </Router>
       </ThemeProvider>
