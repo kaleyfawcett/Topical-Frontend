@@ -46,7 +46,7 @@ const Search = () => {
       <ProductList searchResults={result} />
       {toProductList
         ? <Redirect to={`/productlist/${productName}`} />
-        : null}
+        : <Redirect to='/' />}
     </div>
   )
 }
