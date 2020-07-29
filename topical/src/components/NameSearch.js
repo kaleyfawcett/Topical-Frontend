@@ -10,6 +10,7 @@ import ProductList from './ProductListPage'
 const Search = () => {
   const [productName, setProductName] = useState('')
   const [result, setResult] = useState()
+  const [toProductList, setToProductist] = useState(false)
 
   const handleSubmit = async (event) => {
     try {
@@ -43,6 +44,9 @@ const Search = () => {
         />
       </form>
       <ProductList searchResults={result} />
+      {toProductList
+        ? <Redirect to={`/productlist/${productName}`} />
+        : null}
     </div>
   )
 }
