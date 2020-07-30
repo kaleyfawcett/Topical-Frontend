@@ -5,31 +5,26 @@ import SearchIcon from '@material-ui/icons/Search'
 import InputAdornment from '@material-ui/core/InputAdornment'
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
-import ProductList from './ProductListPage'
 
-const Search = () => {
+const Search = ({ onSearchResults }) => {
   const [productName, setProductName] = useState('')
-  const [result, setResult] = useState([])
+  const [result, setResult] = useState()
+  const [toProductList, setToProductList] = useState(false)
 
   const handleSubmit = async (event) => {
-    event.preventDefault()
-    const result = await axios
-      .get(`https://shopical.herokuapp.com/api/search?name=${productName}`, {
-        name: productName
-      })
+    try {
+      event.preventDefault()
+      const result = await axios
+        .get(`https://shopical.herokuapp.com/api/search?name=${productName}`, {
+          name: productName
+        })
+      setResult(result.data.results)
+      setToProductList(true)
+      onSearchResults(result.data.results)
+    } catch (error) {
+      console.error(error.message)
+    }
   }
-  if (!result) {
-    return
-    <h2>Error('Searching failed.')</h2>
-    
-  }
-  setResult(result)
-  history.push({ pathname: `/productlist/${productName}`, state: { result: result } })
-  } catch (error) {
-   console.error(error.message)
-  }
-  setLoading(false)
-  
 
   return (
     <div>
@@ -48,9 +43,10 @@ const Search = () => {
           }}
         />
       </form>
-
+      {toProductList
+        ? <Redirect to='/productlist/' />
+        : null}
     </div>
   )
 }
-
 export default Search

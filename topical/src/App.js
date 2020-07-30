@@ -11,7 +11,6 @@ import Home from './components/Home'
 import { ThemeProvider } from '@material-ui/core/styles'
 // import CssBaseline from '@material-ui/core/CssBaseline'
 import Theme from './components/Theme'
-import ProductList from './components/ProductListPage'
 
 function App ({ result, productName }) {
   return (
