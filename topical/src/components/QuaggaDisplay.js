@@ -13,7 +13,6 @@ function QuaggaDisplay ({ onSearchResults }) {
 
   return (
     <div>
-      <BarcodeSearch onSearchResults={onSearchResults} quaggaResult={quaggaResult} />
       <Box m={6}>
         <Button variant='contained' color='primary' onClick={() => setCamera(!camera)}>
           {camera ? 'Close Camera' : 'Open Scanner'}
@@ -21,7 +20,11 @@ function QuaggaDisplay ({ onSearchResults }) {
       </Box>
       <Box m={6}>
         <div className='container'>
-          {camera && <Scanner onDetected={onDetected} />}
+          {camera &&
+            <div>
+              <BarcodeSearch onSearchResults={onSearchResults} quaggaResult={quaggaResult} />
+              <Scanner onDetected={onDetected} />
+            </div>}
         </div>
       </Box>
     </div>

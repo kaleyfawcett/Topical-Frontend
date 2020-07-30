@@ -2,7 +2,7 @@ import React from 'react'
 import { Grid, Typography, CardMedia } from '@material-ui/core'
 import List from '@material-ui/core/List'
 
-function Product (props) {
+function ProductDetail (props) {
 //   const [name, setName] = useState('')
 //   const [imageURL, setimageURL] = useState('')
   const results = this.props.results
@@ -27,4 +27,4 @@ function Product (props) {
   )
 }
 
-export default Product
+export default ProductDetail

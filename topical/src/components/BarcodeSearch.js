@@ -4,10 +4,8 @@ import TextField from '@material-ui/core/TextField'
 import IconButton from '@material-ui/core/IconButton'
 import SearchIcon from '@material-ui/icons/Search'
 import InputAdornment from '@material-ui/core/InputAdornment'
-import quagga from 'quagga'
 
 const BarcodeSearch = ({ quaggaResult, onSearchResults }) => {
-  // const [upc, setUpc] = useState('')
   const [searchResult, setSearchResult] = useState()
   const [toProductDetail, setToProductDetail] = useState(false)
 
@@ -18,14 +16,13 @@ const BarcodeSearch = ({ quaggaResult, onSearchResults }) => {
       const result = await axios
         .get(`https://shopical.herokuapp.com/api/search?upc=${quaggaResult}`, {
           headers: {
-            // upc: quaggaResult,
             Authorization: 'Token 29174f9636c35eb521cb2ee74e7558dd5ecb3486'
           }
         })
       console.log('result from request: ', result.data)
       setSearchResult(result.data)
       setToProductDetail(true)
-      // onSearchResults(result.data)
+      onSearchResults(result.data)
       console.log('result stored in state:', searchResult)
     } catch (error) {
       console.error(error.message)

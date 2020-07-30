@@ -1,33 +1,25 @@
 import React from 'react'
-import List from '@material-ui/core/List'
-// import ListItem from '@material-ui/core/ListItem'
-// import ListItemText from '@material-ui/core/ListItemText'
+import { Grid } from '@material-ui/core'
 
-const ProductList = ({ results }) => {
-  // function loadMoreItems(event) {
-  //   if (event.target.scrollTop === event.target.scrollHeight)
-  // }
+const ProductList = ({ result }) => {
+  const containerStyles = {
+    height: '100vh',
+    overflow: 'auto',
+    textAlign: 'center',
+    padding: '5vh'
+  }
   return (
-    <div>
-      <List
-      // {results.name}
-
-        // onScroll={loadMoreItems}
-        // style={{
-        //   maxHeight: 300,
-        //   overflowY: 'scroll'
-        // }}
-      >
-        {/* {
-          this.props.products.map(product => (
-            <productName
-              key={product.id}
-              product={product}
-            />
-          ))
-        } */}
-      </List>
-    </div>
+    <Grid container direction='column'>
+      <div style={containerStyles}>
+        {!result
+          ? (
+            <h1>No results found</h1>
+          )
+          : (
+            <h1>{result[0].name}</h1>
+          )}
+      </div>
+    </Grid>
   )
 }
 
