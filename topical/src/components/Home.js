@@ -2,6 +2,8 @@ import React from 'react'
 import { Grid, Typography, Box } from '@material-ui/core'
 import NameSearch from './NameSearch'
 import QuaggaDisplay from './QuaggaDisplay'
+// import Card from '@material-ui/core/Card'
+import MediaCard from './MediaCard'
 
 const Home = ({ setSearchResults }) => {
   const containerStyles = {
@@ -25,6 +27,7 @@ const Home = ({ setSearchResults }) => {
           </Typography>
           <QuaggaDisplay onSearchResults={onSearchResults} />
         </Box>
+        <MediaCard />
         <Typography variant='h4' gutterBottom>
         Or search by product name:
         </Typography>
