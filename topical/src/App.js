@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './App.css'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import BarcodeSearch from './components/BarcodeSearch'
@@ -12,19 +12,32 @@ import { ThemeProvider } from '@material-ui/core/styles'
 // import CssBaseline from '@material-ui/core/CssBaseline'
 import Theme from './components/Theme'
 import ProductList from './components/ProductListPage'
+import ProductDetail from './components/ProductDetail'
 
-function App ({ result, productName }) {
+function App ({ result }) {
+  const [searchResults, setSearchResults] = useState(null)
+
   return (
     <div>
       <ThemeProvider theme={Theme}>
         <Router>
           <Navigation />
           <Switch>
-            <Route path='/' exact component={Home} />
+            <Route path='/' exact>
+              <Home setSearchResults={setSearchResults} />
+            </Route>
+            {/* I recommend following the component pattern on line 28 so that it is a bit easier to pass props for the components below             */}
             <Route path='/profile' component={ProfilePage} />
-            <Route path='/search' component={BarcodeSearch} />
+            <Route path='/search'>
+              <BarcodeSearch />
+            </Route>
+            <Route path='/productdetail'>
+              <ProductDetail result={searchResults} />
+            </Route>
             <Route path='/about' component={About} />
-            <Route path={`/productlist/${productName}`} render={() => <ProductList result={result} />} />
+            <Route path='/productlist/'>
+              <ProductList result={searchResults} />
+            </Route>
           </Switch>
         </Router>
       </ThemeProvider>

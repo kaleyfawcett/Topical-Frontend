@@ -2,15 +2,27 @@ import React from 'react'
 import { Grid, Typography, CardMedia } from '@material-ui/core'
 import List from '@material-ui/core/List'
 
-function Product (props) {
+function ProductDetail ({ result }) {
 //   const [name, setName] = useState('')
 //   const [imageURL, setimageURL] = useState('')
-  const results = this.props.results
-
+  const containerStyles = {
+    height: '100vh',
+    overflow: 'auto',
+    textAlign: 'center',
+    padding: '5vh'
+  }
+  console.log('fromProductdetail:', result)
   return (
     <Grid container direction='column'>
-      <div>
-        <Typography variant='h4' gutterBottom>
+      <div style={containerStyles}>
+        {!result
+          ? (
+            <h1>No results found</h1>
+          )
+          : (
+            <h1>{result.name}</h1>
+          )}
+        {/* <Typography variant='h4' gutterBottom>
           {results.name}
         </Typography>
         <Typography variant='h5' gutterBottom>
@@ -21,10 +33,10 @@ function Product (props) {
         </CardMedia>
         <List>
           {results.ingredients}
-        </List>
+        </List> */}
       </div>
     </Grid>
   )
 }
 
-export default Product
+export default ProductDetail

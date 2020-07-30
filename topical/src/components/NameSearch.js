@@ -5,12 +5,11 @@ import SearchIcon from '@material-ui/icons/Search'
 import InputAdornment from '@material-ui/core/InputAdornment'
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
-import ProductList from './ProductListPage'
 
-const Search = () => {
+const Search = ({ onSearchResults }) => {
   const [productName, setProductName] = useState('')
   const [result, setResult] = useState()
-  const [toProductList, setToProductist] = useState(false)
+  const [toProductList, setToProductList] = useState(false)
 
   const handleSubmit = async (event) => {
     try {
@@ -20,8 +19,8 @@ const Search = () => {
           name: productName
         })
       setResult(result.data.results)
-      // trigger ReactRouter to render the product list component
-      // history.push({ pathname: `/ productlist / ${productName} `, state: { result: result } })
+      setToProductList(true)
+      onSearchResults(result.data.results)
     } catch (error) {
       console.error(error.message)
     }
@@ -43,10 +42,9 @@ const Search = () => {
           }}
         />
       </form>
-      <ProductList searchResults={result} />
       {toProductList
-        ? <Redirect to={`/productlist/${productName}`} />
-        : <Redirect to='/' />}
+        ? <Redirect to='/productlist/' />
+        : null}
     </div>
   )
 }
