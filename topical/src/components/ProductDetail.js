@@ -20,7 +20,10 @@ function ProductDetail ({ result }) {
             <h1>No results found</h1>
           )
           : (
-            <h1>{result.name}</h1>
+            <div>
+              <h1>{result.name}</h1>
+              <img src={result.image_url} />
+            </div>
           )}
         {/* <Typography variant='h4' gutterBottom>
           {results.name}

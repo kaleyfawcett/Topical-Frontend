@@ -8,13 +8,13 @@ const useStyles = makeStyles({
   root: {
     maxWidth: 145,
     display: 'flex'
-  },
-  media: {
-    height: 40,
-    display: 'flex',
-    justifyContent: 'center'
   }
-  // img: {
+  // media: {
+  //   height: 40,
+  //   display: 'flex',
+  //   justifyContent: 'center'
+  // },
+  // image: {
   //   alignItems: 'center',
   //   justify: 'center',
   //   display: 'inline-block'

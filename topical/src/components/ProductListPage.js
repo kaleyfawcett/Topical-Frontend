@@ -6,8 +6,10 @@ const ProductList = ({ result }) => {
     height: '100vh',
     overflow: 'auto',
     textAlign: 'center',
-    padding: '5vh'
+    padding: '5vh',
+    alignItems: 'center'
   }
+  console.log(result)
   return (
     <Grid container direction='column'>
       <div style={containerStyles}>
@@ -16,7 +18,11 @@ const ProductList = ({ result }) => {
             <h1>No results found</h1>
           )
           : (
-            <h1>{result[0].name}</h1>
+            <div>{result.map((item) => (
+              <p key={item.id}>
+                {item.name} <img src={item.image_url} />
+              </p>))}
+            </div>
           )}
       </div>
     </Grid>
