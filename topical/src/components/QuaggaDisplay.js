@@ -3,17 +3,16 @@ import Scanner from './Scanner'
 import BarcodeSearch from './BarcodeSearch'
 import { Button, Box } from '@material-ui/core/'
 
-function QuaggaDisplay () {
+function QuaggaDisplay ({ onSearchResults }) {
   const [camera, setCamera] = useState(false)
-  const [result, setResult] = useState('')
+  const [quaggaResult, setQuaggaResult] = useState('')
 
   const onDetected = result => {
-    setResult(result)
+    setQuaggaResult(result)
   }
 
   return (
     <div>
-      <BarcodeSearch result={result} />
       <Box m={6}>
         <Button variant='contained' color='primary' onClick={() => setCamera(!camera)}>
           {camera ? 'Close Camera' : 'Open Scanner'}
@@ -21,7 +20,11 @@ function QuaggaDisplay () {
       </Box>
       <Box m={6}>
         <div className='container'>
-          {camera && <Scanner onDetected={onDetected} />}
+          {camera &&
+            <div>
+              <BarcodeSearch onSearchResults={onSearchResults} quaggaResult={quaggaResult} />
+              <Scanner onDetected={onDetected} />
+            </div>}
         </div>
       </Box>
     </div>

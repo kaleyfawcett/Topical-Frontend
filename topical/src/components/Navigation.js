@@ -12,6 +12,10 @@ import ListItemText from '@material-ui/core/ListItemText'
 import MenuIcon from '@material-ui/icons/Menu'
 import CloseIcon from '@material-ui/icons/Close'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
+import { Home, Book, AccountBox } from '@material-ui/icons'
+import SearchIcon from '@material-ui/icons/Search'
+import PersonIcon from '@material-ui/icons/Person'
+import InfoIcon from '@material-ui/icons/Info'
 import { Link } from 'react-router-dom'
 
 const drawerWidth = 200
@@ -60,12 +64,15 @@ function Navigation () {
       <List>
         <ListItem button>
           <ListItemText><Link to='/profile'>Profile</Link></ListItemText>
+          <PersonIcon />
         </ListItem>
         <ListItem button>
           <ListItemText><Link to='/'>Search</Link></ListItemText>
+          <SearchIcon />
         </ListItem>
         <ListItem button>
           <ListItemText><Link to='/about'>About</Link></ListItemText>
+          <InfoIcon />
         </ListItem>
       </List>
     </div>
