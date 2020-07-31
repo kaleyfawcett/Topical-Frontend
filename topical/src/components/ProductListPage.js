@@ -18,10 +18,12 @@ const ProductList = ({ result }) => {
             <h1>No results found</h1>
           )
           : (
-            <div>{result.map((item) => (
-              <p key={item.id}>
-                {item.name} <img src={item.image_url} />
-              </p>))}
+            <div>
+              {result.map((item) => (
+                <p key={item.id}>
+                  {item.name}
+                  <img src={item.image_url} />
+                </p>))}
             </div>
           )}
       </div>
