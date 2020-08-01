@@ -1,5 +1,6 @@
 import React from 'react'
 import { Grid } from '@material-ui/core'
+import ProductCard from './ProductCard'
 
 const ProductList = ({ result }) => {
   const containerStyles = {
@@ -19,11 +20,18 @@ const ProductList = ({ result }) => {
           )
           : (
             <div>
-              {result.map((item) => (
-                <p key={item.id}>
-                  {item.name}
-                  <img src={item.image_url} />
-                </p>))}
+              {result.map((item) => {
+                return (
+                  <ProductCard
+                    key={item.upc}
+                    name={item.name}
+                    image={item.image_url}
+                    upc={item.upc}
+                  />
+                )
+              }
+
+              )}
             </div>
           )}
       </div>
