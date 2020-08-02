@@ -42,7 +42,28 @@ function ProductDetail ({ searchResult }) {
 
   return (
     <Grid container direction='column'>
-      <div style={containerStyles} />
+      <div style={containerStyles}>
+        <ul> Full Ingredients:
+          {ingredients.map((item) => {
+            return (
+              <li key={item.name}>{item.name}</li>
+            )
+          })}
+        </ul>
+        {violations
+          ? (
+            <p>No violations found</p>
+          )
+          : (
+            <ul> Violations:
+              {violations.map((item) => {
+                return (
+                  <li key={item.name}>{item.name}</li>
+                )
+              })}
+            </ul>)}
+
+      </div>
     </Grid>
   )
 }
