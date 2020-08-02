@@ -2,18 +2,14 @@ import React, { useState } from 'react'
 import './App.css'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import BarcodeSearch from './components/BarcodeSearch'
-// import NameSearch from './components/NameSearch'
-// import { spacing } from '@material-ui/system'
 import Navigation from './components/Navigation'
 import ProfilePage from './components/ProfilePage'
 import About from './components/About'
 import Home from './components/Home'
 import { ThemeProvider } from '@material-ui/core/styles'
-// import CssBaseline from '@material-ui/core/CssBaseline'
 import Theme from './components/Theme'
 import ProductList from './components/ProductListPage'
 import ProductDetail from './components/ProductDetail'
-import ProductCard from './components/ProductCard'
 
 function App ({ result }) {
   const [searchResults, setSearchResults] = useState(null)
@@ -39,7 +35,9 @@ function App ({ result }) {
             <Route path='/productlist/'>
               <ProductList result={searchResults} />
             </Route>
-            <ProductCard path='/product/:id' />
+            <Route path='/product/:upc'>
+              <ProductDetail searchResult={searchResults} />
+            </Route>
           </Switch>
         </Router>
       </ThemeProvider>

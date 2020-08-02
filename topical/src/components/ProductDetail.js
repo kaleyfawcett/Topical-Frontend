@@ -1,43 +1,48 @@
-import React from 'react'
-import { Grid, Typography, CardMedia } from '@material-ui/core'
-import List from '@material-ui/core/List'
+import React, { useEffect, useState } from 'react'
+import { Grid } from '@material-ui/core'
+import axios from 'axios'
+import { useParams } from 'react-router-dom'
 
-function ProductDetail ({ result }) {
-//   const [name, setName] = useState('')
-//   const [imageURL, setimageURL] = useState('')
+function ProductDetail ({ searchResult }) {
+  const { upc } = useParams()
+  const [ingredients, setIngredients] = useState([])
+  const [violations, setViolations] = useState([])
+
   const containerStyles = {
     height: '100vh',
     overflow: 'auto',
     textAlign: 'center',
     padding: '5vh'
   }
-  console.log('fromProductdetail:', result)
+
+  useEffect(() => {
+    if (searchResult) {
+      getDetails()
+    }
+  }, [searchResult, upc]
+  )
+
+  const getDetails = async () => {
+    try {
+      const result = await axios
+        .get(`https://shopical.herokuapp.com/api/product/${upc}/ingredients/`, {
+          headers: {
+            Authorization: 'Token 29174f9636c35eb521cb2ee74e7558dd5ecb3486'
+          }
+        })
+      console.log(result)
+      setIngredients(result.data.ingredient_list)
+      setViolations(result.data.violations)
+      console.log(ingredients)
+      console.log(violations)
+    } catch (error) {
+      console.error(error.message)
+    }
+  }
+
   return (
     <Grid container direction='column'>
-      <div style={containerStyles}>
-        {!result
-          ? (
-            <h1>No results found</h1>
-          )
-          : (
-            <div>
-              <h1>{result.name}</h1>
-              <img src={result.image_url} />
-            </div>
-          )}
-        {/* <Typography variant='h4' gutterBottom>
-          {results.name}
-        </Typography>
-        <Typography variant='h5' gutterBottom>
-          {results.description}
-        </Typography>
-        <CardMedia>
-          {results.imageURL}
-        </CardMedia>
-        <List>
-          {results.ingredients}
-        </List> */}
-      </div>
+      <div style={containerStyles} />
     </Grid>
   )
 }
