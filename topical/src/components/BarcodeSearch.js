@@ -47,7 +47,7 @@ const BarcodeSearch = ({ quaggaResult, onSearchResults }) => {
         />
       </form>
       {toProductDetail
-        ? <Redirect to='/productdetail/' />
+        ? <Redirect to={`/product/${quaggaResult}`} />
         : null}
     </div>
   )
