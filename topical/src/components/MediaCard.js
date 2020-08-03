@@ -6,19 +6,21 @@ import CardMedia from '@material-ui/core/CardMedia'
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 145,
-    display: 'flex'
+    maxWidth: 250,
+    maxHeight: 150,
+    display: 'flex',
+    justifyContent: 'center'
+  },
+  media: {
+    height: 100,
+    display: 'flex',
+    justifyContent: 'center'
+  },
+  image: {
+    alignItems: 'center',
+    justify: 'center',
+    display: 'inline-block'
   }
-  // media: {
-  //   height: 40,
-  //   display: 'flex',
-  //   justifyContent: 'center'
-  // },
-  // image: {
-  //   alignItems: 'center',
-  //   justify: 'center',
-  //   display: 'inline-block'
-  // }
 })
 
 export default function MediaCard () {
@@ -29,8 +31,8 @@ export default function MediaCard () {
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image='https://haenfler.sites.grinnell.edu/wp-content/uploads/2017/12/Picture-111.png'
-          title='barcode'
+          image='https://i.imgur.com/eZjwKsY.png'
+          title='logo'
         />
       </CardActionArea>
     </Card>

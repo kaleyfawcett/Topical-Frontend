@@ -7,6 +7,8 @@ function ProductDetail ({ searchResult }) {
   const { upc } = useParams()
   const [ingredients, setIngredients] = useState([])
   const [violations, setViolations] = useState([])
+  const [image, setImage] = useState('')
+  const [name, setName] = useState('')
 
   const containerStyles = {
     height: '100vh',
@@ -31,6 +33,8 @@ function ProductDetail ({ searchResult }) {
           }
         })
       console.log(result)
+      setName(result.data.name)
+      setImage(result.data.image_url)
       setIngredients(result.data.ingredient_list)
       setViolations(result.data.violations)
       console.log(ingredients)
@@ -43,26 +47,22 @@ function ProductDetail ({ searchResult }) {
   return (
     <Grid container direction='column'>
       <div style={containerStyles}>
-        <ul> Full Ingredients:
-          {ingredients.map((item) => {
+        <h1>{name}</h1>
+        <img src={image} alt={name} />
+        <ul> Violations:
+          {violations.map((index) => {
             return (
-              <li key={item.name}>{item.name}</li>
+              <li key={index}>{index}</li>
             )
           })}
         </ul>
-        {violations
-          ? (
-            <p>No violations found</p>
-          )
-          : (
-            <ul> Violations:
-              {violations.map((item) => {
-                return (
-                  <li key={item.name}>{item.name}</li>
-                )
-              })}
-            </ul>)}
-
+        <div> Full Ingredients:
+          {ingredients.map((item) => {
+            return (
+              <p key={item.name}>{item.name}</p>
+            )
+          })}
+        </div>
       </div>
     </Grid>
   )

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, Typography, Box } from '@material-ui/core'
+import { Grid, Typography, Box, CardMedia } from '@material-ui/core'
 import NameSearch from './NameSearch'
 import QuaggaDisplay from './QuaggaDisplay'
 // import Card from '@material-ui/core/Card'
@@ -18,16 +18,16 @@ const Home = ({ setSearchResults }) => {
   return (
     <Grid container direction='column'>
       <div style={containerStyles}>
-        <Typography variant='h2' gutterBottom>
+        {/* <Typography variant='h2' gutterBottom>
         Topical
-        </Typography>
-        <Box m={6}>
+        </Typography> */}
+        {/* <MediaCard /> */}
+        <Box m={4}>
           <Typography variant='h4' gutterBottom>
         To get started, scan a product or enter the UPC:
           </Typography>
           <QuaggaDisplay onSearchResults={onSearchResults} />
         </Box>
-        <MediaCard />
         <Typography variant='h4' gutterBottom>
         Or search by product name:
         </Typography>

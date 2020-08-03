@@ -17,6 +17,7 @@ import SearchIcon from '@material-ui/icons/Search'
 import PersonIcon from '@material-ui/icons/Person'
 import InfoIcon from '@material-ui/icons/Info'
 import { Link } from 'react-router-dom'
+import MediaCard from './MediaCard'
 
 const drawerWidth = 200
 const useStyles = makeStyles(theme => ({
@@ -62,10 +63,10 @@ function Navigation () {
   const drawer = (
     <div>
       <List>
-        <ListItem button>
+        {/* <ListItem button>
           <ListItemText><Link to='/profile'>Profile</Link></ListItemText>
           <PersonIcon />
-        </ListItem>
+        </ListItem> */}
         <ListItem button>
           <ListItemText><Link to='/'>Search</Link></ListItemText>
           <SearchIcon />
@@ -91,10 +92,8 @@ function Navigation () {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant='h6' noWrap>
-            Menu
-          </Typography>
         </Toolbar>
+        {/* <MediaCard /> */}
       </AppBar>
 
       <nav className={classes.drawer}>
