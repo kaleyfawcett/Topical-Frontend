@@ -28,14 +28,11 @@ function App ({ result }) {
             <Route path='/search'>
               <BarcodeSearch />
             </Route>
-            <Route path='/productdetail'>
-              <ProductDetail result={searchResults} />
-            </Route>
             <Route path='/about' component={About} />
             <Route path='/productlist/'>
               <ProductList result={searchResults} />
             </Route>
-            <Route path='/product/:upc'>
+            <Route path='/product/:upc/'>
               <ProductDetail searchResult={searchResults} />
             </Route>
           </Switch>
