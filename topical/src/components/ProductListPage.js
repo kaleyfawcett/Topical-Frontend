@@ -1,5 +1,7 @@
 import React from 'react'
 import Card from '@material-ui/core/Card'
+import CardContent from '@material-ui/core/CardContent'
+import Typography from '@material-ui/core/Typography'
 import ProductCard from './ProductCard'
 
 const styles = muiBaseTheme => ({
@@ -10,6 +12,10 @@ const styles = muiBaseTheme => ({
     boxShadow: '0 8px 40px -12px rgba(0,0,0,0.3)',
     '&:hover': {
       boxShadow: '0 16px 70px -12.125px rgba(0,0,0,0.3)'
+    },
+    content: {
+      textAlign: 'center',
+      padding: '5vh'
     }
   }
 })
@@ -18,28 +24,36 @@ const ProductList = ({ result }) => {
   console.log(result)
   return (
     <Card className={classes.card}>
-      <div>
-        {!result
-          ? (
-            <h1>No results found</h1>
-          )
-          : (
-            <div>
-              {result.map((item) => {
-                return (
-                  <ProductCard
-                    key={item.upc}
-                    name={item.name}
-                    image={item.image_url}
-                    upc={item.upc}
-                  />
-                )
-              }
+      <CardContent className={classes.content}>
+        <div>
+          <Typography>
+            {!result
+              ? (
+                <Typography
+                  variant='h3'
+                >
+                No results found
+                </Typography>
+              )
+              : (
+                <div>
+                  {result.map((item) => {
+                    return (
+                      <ProductCard
+                        key={item.upc}
+                        name={item.name}
+                        image={item.image_url}
+                        upc={item.upc}
+                      />
+                    )
+                  }
 
+                  )}
+                </div>
               )}
-            </div>
-          )}
-      </div>
+          </Typography>
+        </div>
+      </CardContent>
     </Card>
   )
 }

@@ -1,9 +1,7 @@
 import React from 'react'
-import { Grid, Typography, Box, CardMedia } from '@material-ui/core'
+import { Grid, Typography, Box } from '@material-ui/core'
 import NameSearch from './NameSearch'
 import QuaggaDisplay from './QuaggaDisplay'
-// import Card from '@material-ui/core/Card'
-import MediaCard from './MediaCard'
 
 const Home = ({ setSearchResults }) => {
   const containerStyles = {
@@ -18,18 +16,15 @@ const Home = ({ setSearchResults }) => {
   return (
     <Grid container direction='column'>
       <div style={containerStyles}>
-        {/* <Typography variant='h2' gutterBottom>
-        Topical
-        </Typography> */}
-        {/* <MediaCard /> */}
         <Box m={4}>
-          <Typography variant='h4' gutterBottom>
-        To get started, scan a product or enter the UPC:
+          <Typography variant='h5' gutterBottom>
+            {/* To get started, scan a product or enter the UPC: */}
+        Open scanner to check a product’s ingredients:
           </Typography>
           <QuaggaDisplay onSearchResults={onSearchResults} />
         </Box>
-        <Typography variant='h4' gutterBottom>
-        Or search by product name:
+        <Typography variant='h5' gutterBottom>
+        Or search by product name, ingredients, or category:
         </Typography>
         <NameSearch onSearchResults={onSearchResults} />
       </div>
