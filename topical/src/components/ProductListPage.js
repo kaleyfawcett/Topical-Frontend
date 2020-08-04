@@ -1,41 +1,65 @@
 import React from 'react'
-import { Grid } from '@material-ui/core'
+import Card from '@material-ui/core/Card'
+import CardContent from '@material-ui/core/CardContent'
+import Typography from '@material-ui/core/Typography'
 import ProductCard from './ProductCard'
 
-const ProductList = ({ result }) => {
-  const containerStyles = {
-    height: '100vh',
-    overflow: 'auto',
-    textAlign: 'center',
-    padding: '5vh',
-    alignItems: 'center'
+const styles = muiBaseTheme => ({
+  card: {
+    maxWidth: 300,
+    margin: 'auto',
+    transition: '0.3s',
+    boxShadow: '0 8px 40px -12px rgba(0,0,0,0.3)',
+    '&:hover': {
+      boxShadow: '0 16px 70px -12.125px rgba(0,0,0,0.3)'
+    },
+    content: {
+      textAlign: 'center',
+      padding: '5vh'
+    }
   }
+})
+const classes = styles()
+const ProductList = ({ result }) => {
   console.log(result)
   return (
-    <Grid container direction='column'>
-      <div style={containerStyles}>
-        {!result
-          ? (
-            <h1>No results found</h1>
-          )
-          : (
-            <div>
-              {result.map((item) => {
-                return (
-                  <ProductCard
-                    key={item.upc}
-                    name={item.name}
-                    image={item.image_url}
-                    upc={item.upc}
-                  />
-                )
-              }
+    <Card className={classes.card}>
+      <CardContent className={classes.content}>
+        <div>
+          <Typography>
+            {!result
+              ? (
+                <Typography
+                  variant='h3'
+                >
+                No results found
+                </Typography>
+              )
+              : (
+                <div>
+                  <Typography
+                    variant='h5'
+                  >
+                    Results
+                  </Typography>
+                  {result.map((item) => {
+                    return (
+                      <ProductCard
+                        key={item.upc}
+                        name={item.name}
+                        image={item.image_url}
+                        upc={item.upc}
+                      />
+                    )
+                  }
 
+                  )}
+                </div>
               )}
-            </div>
-          )}
-      </div>
-    </Grid>
+          </Typography>
+        </div>
+      </CardContent>
+    </Card>
   )
 }
 
