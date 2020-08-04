@@ -30,7 +30,8 @@ function ProductDetail ({ searchResult }) {
         padding: '5vh'
       },
       media: {
-        padding: '5vh'
+        padding: '5vh',
+        display: 'center'
       }
     }
   })
@@ -73,7 +74,7 @@ function ProductDetail ({ searchResult }) {
         >
           {name}
         </Typography>
-        <CardMedia>
+        <CardMedia className={classes.media}>
           <img src={image} alt={name} />
         </CardMedia>
         <Typography

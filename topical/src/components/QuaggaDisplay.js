@@ -13,7 +13,7 @@ function QuaggaDisplay ({ onSearchResults }) {
 
   return (
     <div>
-      <Box m={6}>
+      <Box m={7}>
         <Button variant='contained' color='primary' onClick={() => setCamera(!camera)}>
           {camera ? 'Close Camera' : 'Open Scanner'}
         </Button>

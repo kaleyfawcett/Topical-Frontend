@@ -20,6 +20,14 @@ function About () {
         <Typography
           variant='h6'
         >
+        Fragrance
+        </Typography>
+        <Typography>
+        Fragrance is defined by the FDA as a combination of chemicals that gives each perfume or cologne (including those used in other products) its distinct scent. Fragrance ingredients may be derived from petroleum or natural raw materials. Companies that manufacture perfume or cologne purchase fragrance mixtures from fragrance houses (companies that specialize in developing fragrances) to develop their own proprietary blends. In addition to “scent” chemicals that create the fragrance, perfumes and colognes also contain solvents, stabilizers, UV-absorbers, preservatives, and dyes. [1]
+        </Typography>
+        <Typography
+          variant='h6'
+        >
         Formaldehyde
         </Typography>
         <Typography>
