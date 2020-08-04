@@ -15,7 +15,6 @@ import { makeStyles, useTheme } from '@material-ui/core/styles'
 import SearchIcon from '@material-ui/icons/Search'
 import InfoIcon from '@material-ui/icons/Info'
 import { Link } from 'react-router-dom'
-import MediaCard from './MediaCard'
 import Avatar from '@material-ui/core/Avatar'
 
 const drawerWidth = 200
@@ -108,7 +107,6 @@ function Navigation () {
             <MenuIcon />
           </IconButton>
         </Toolbar>
-        {/* <MediaCard /> */}
       </AppBar>
 
       <nav className={classes.drawer}>
