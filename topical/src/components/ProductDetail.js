@@ -80,7 +80,7 @@ function ProductDetail ({ searchResult }) {
           className='heading'
           variant='h6'
         >
-          Violations:
+          Common Irritants:
         </Typography>
         <Typography
           color='error'

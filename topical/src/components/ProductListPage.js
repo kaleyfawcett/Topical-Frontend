@@ -37,6 +37,11 @@ const ProductList = ({ result }) => {
               )
               : (
                 <div>
+                  <Typography
+                    variant='h5'
+                  >
+                    Results
+                  </Typography>
                   {result.map((item) => {
                     return (
                       <ProductCard
