@@ -1,8 +1,5 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import Card from '@material-ui/core/Card'
-import CardActionArea from '@material-ui/core/CardActionArea'
-import CardMedia from '@material-ui/core/CardMedia'
 
 const useStyles = makeStyles({
   root: {
@@ -11,15 +8,9 @@ const useStyles = makeStyles({
     display: 'flex',
     justifyContent: 'center'
   },
-  media: {
-    height: 100,
-    display: 'flex',
-    justifyContent: 'center'
-  },
   image: {
-    alignItems: 'center',
-    justify: 'center',
-    display: 'inline-block'
+    maxHeight: 100
+
   }
 })
 
@@ -27,14 +18,7 @@ export default function MediaCard () {
   const classes = useStyles()
 
   return (
-    <Card className={classes.root}>
-      <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image='https://i.imgur.com/eZjwKsY.png'
-          title='logo'
-        />
-      </CardActionArea>
-    </Card>
+    <img src='https://i.imgur.com/eZjwKsY.png' className={classes.image} />
+
   )
 }

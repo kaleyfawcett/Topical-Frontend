@@ -107,8 +107,8 @@ function Navigation () {
           >
             <MenuIcon />
           </IconButton>
+          <MediaCard />
         </Toolbar>
-        {/* <MediaCard /> */}
       </AppBar>
 
       <nav className={classes.drawer}>
