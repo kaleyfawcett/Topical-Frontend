@@ -14,7 +14,7 @@ function About () {
         <Typography
           variant='h5'
         >
-          More About The Common Skin Irritants:
+          This is a list of common skin irritants and more information. These 11 ingredients will be flagged by Topical when you search for them.
         </Typography>
         <br />
         <Typography
