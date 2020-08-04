@@ -1,19 +1,24 @@
 import React from 'react'
-import { Grid } from '@material-ui/core'
+import Card from '@material-ui/core/Card'
 import ProductCard from './ProductCard'
 
-const ProductList = ({ result }) => {
-  const containerStyles = {
-    height: '100vh',
-    overflow: 'auto',
-    textAlign: 'center',
-    padding: '5vh',
-    alignItems: 'center'
+const styles = muiBaseTheme => ({
+  card: {
+    maxWidth: 300,
+    margin: 'auto',
+    transition: '0.3s',
+    boxShadow: '0 8px 40px -12px rgba(0,0,0,0.3)',
+    '&:hover': {
+      boxShadow: '0 16px 70px -12.125px rgba(0,0,0,0.3)'
+    }
   }
+})
+const classes = styles()
+const ProductList = ({ result }) => {
   console.log(result)
   return (
-    <Grid container direction='column'>
-      <div style={containerStyles}>
+    <Card className={classes.card}>
+      <div>
         {!result
           ? (
             <h1>No results found</h1>
@@ -35,7 +40,7 @@ const ProductList = ({ result }) => {
             </div>
           )}
       </div>
-    </Grid>
+    </Card>
   )
 }
 
