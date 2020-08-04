@@ -12,11 +12,11 @@ import ListItemText from '@material-ui/core/ListItemText'
 import MenuIcon from '@material-ui/icons/Menu'
 import CloseIcon from '@material-ui/icons/Close'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
-// import { Home, Book, AccountBox } from '@material-ui/icons'
 import SearchIcon from '@material-ui/icons/Search'
-import PersonIcon from '@material-ui/icons/Person'
 import InfoIcon from '@material-ui/icons/Info'
 import { Link } from 'react-router-dom'
+import MediaCard from './MediaCard'
+import Avatar from '@material-ui/core/Avatar'
 
 const drawerWidth = 200
 const useStyles = makeStyles(theme => ({
@@ -63,16 +63,32 @@ function Navigation () {
     <div>
       <List>
         <ListItem button>
-          <ListItemText><Link to='/profile'>Profile</Link></ListItemText>
-          <PersonIcon />
+          <ListItemText>
+            <Link to='/'>
+              <Typography
+                variant='h4'
+              >
+                Search
+              </Typography>
+            </Link>
+          </ListItemText>
+          <Avatar>
+            <SearchIcon />
+          </Avatar>
         </ListItem>
         <ListItem button>
-          <ListItemText><Link to='/'>Search</Link></ListItemText>
-          <SearchIcon />
-        </ListItem>
-        <ListItem button>
-          <ListItemText><Link to='/about'>About</Link></ListItemText>
-          <InfoIcon />
+          <ListItemText>
+            <Link to='/about'>
+              <Typography
+                variant='h4'
+              >
+                About
+              </Typography>
+            </Link>
+          </ListItemText>
+          <Avatar>
+            <InfoIcon />
+          </Avatar>
         </ListItem>
       </List>
     </div>
@@ -91,10 +107,8 @@ function Navigation () {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant='h6' noWrap>
-            Menu
-          </Typography>
         </Toolbar>
+        {/* <MediaCard /> */}
       </AppBar>
 
       <nav className={classes.drawer}>
