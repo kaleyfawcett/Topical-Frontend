@@ -6,7 +6,12 @@
       "src": "images/topical.png",
       "sizes": "200x200",
       "type": "image/png"
-    }
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "size" : "144x144",
+      "type": "image/png" 
+  }
   ],
   "start_url": ".",
   "display": "standalone",
