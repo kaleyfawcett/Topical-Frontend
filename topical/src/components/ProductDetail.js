@@ -74,24 +74,35 @@ function ProductDetail ({ searchResult }) {
         <CardMedia className={classes.media}>
           <img src={image} alt={name} />
         </CardMedia>
+
+        {(!violations || !violations.length)
+          ? <Typography variant='h6'>
+              Topical did not find any common irritants in this product.
+          </Typography>
+
+          : (<>
+            <Typography
+              className='heading'
+              variant='h6'
+            >
+            Common Irritants:
+            </Typography>
+
+            <Typography
+              color='error'
+            >
+              {violations.map((item, idx) => [
+                idx > 0 && ', ',
+                <span key={idx}>{item}</span>
+              ])}
+            </Typography>
+             </>)}
+
         <Typography
           className='heading'
           variant='h6'
         >
-          Common Irritants:
-        </Typography>
-        <Typography
-          color='error'
-        >
-          {violations.map((item, idx) => [
-            idx > 0 && ', ',
-            <span key={idx}>{item}</span>
-          ])}
-        </Typography>
-        <Typography
-          className='heading'
-          variant='h6'
-        >
+          <br />
           Full Ingredients:
         </Typography>
         <Typography>
