@@ -3,15 +3,26 @@
   "name": "Topical",
   "icons": [
     {
-      "src": "images/topical.png",
+      "src": "img/topical.png",
       "sizes": "200x200",
+      "type": "image/png"
+    },
+    {
+      "src": "img/Topical512.jpeg",
+      "sizes": "512x512",
       "type": "image/png"
     },
     {
       "src": "apple-touch-icon.png",
       "size" : "144x144",
       "type": "image/png" 
-  }
+    },
+    {
+      "src": "img/maskable_icon.png",
+      "sizes": "196x196",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
   ],
   "start_url": ".",
   "display": "standalone",
