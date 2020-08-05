@@ -35,7 +35,7 @@ const Search = ({ onSearchResults }) => {
             endAdornment: (
               <InputAdornment>
                 <IconButton type='submit'>
-                  <SearchIcon />
+                  <SearchIcon color='inherit' />
                 </IconButton>
               </InputAdornment>
             )
