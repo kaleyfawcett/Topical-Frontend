@@ -30,7 +30,7 @@ const ProductList = ({ result }) => {
             {!result
               ? (
                 <Typography
-                  variant='h3'
+                  variant='h4'
                 >
                 No results found
                 </Typography>
@@ -42,6 +42,7 @@ const ProductList = ({ result }) => {
                   >
                     Results
                   </Typography>
+                  <br />
                   {result.map((item) => {
                     return (
                       <ProductCard

@@ -19,6 +19,12 @@ const styles = muiBaseTheme => ({
       textAlign: 'center',
       padding: '5vh',
       color: 'secondary'
+    },
+    media: {
+      alignItems: 'center',
+      justifyContent: 'center',
+      maxWidth: 200,
+      maxHeight: 20
     }
   }
 })
@@ -32,7 +38,9 @@ const ProductCard = props => {
       <Card className={classes.card}>
         <CardContent className={classes.content}>
           <Typography>
-            <Link to={`/product/${upc}/`}>
+            <Link
+              to={`/product/${upc}/`} style={{ textDecoration: 'none', color: '#000' }}
+            >
               <div key={upc}>
                 <Typography
                   variant='h6'
@@ -42,7 +50,7 @@ const ProductCard = props => {
                 <Typography>
                   {upc}
                 </Typography>
-                <CardMedia>
+                <CardMedia className={classes.media}>
                   <img src={image} alt={name} />
                 </CardMedia>
               </div>
