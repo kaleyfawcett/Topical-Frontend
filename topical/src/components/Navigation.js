@@ -16,8 +16,9 @@ import SearchIcon from '@material-ui/icons/Search'
 import InfoIcon from '@material-ui/icons/Info'
 import { Link } from 'react-router-dom'
 import Avatar from '@material-ui/core/Avatar'
+// import Link from '@material-ui/core/Link'
 
-const drawerWidth = 200
+const drawerWidth = 230
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex'
@@ -63,31 +64,33 @@ function Navigation () {
       <List>
         <ListItem button>
           <ListItemText>
-            <Link to='/'>
+            <Link to='/' style={{ textDecoration: 'none', color: '#000' }}>
               <Typography
                 variant='h4'
               >
                 Search
               </Typography>
+              <Avatar>
+                <SearchIcon />
+              </Avatar>
             </Link>
           </ListItemText>
-          <Avatar>
-            <SearchIcon />
-          </Avatar>
         </ListItem>
+        <br />
+        <br />
         <ListItem button>
           <ListItemText>
-            <Link to='/about'>
+            <Link to='/about' style={{ textDecoration: 'none', color: '#000' }}>
               <Typography
                 variant='h4'
               >
-                About
+                Information
               </Typography>
+              <Avatar>
+                <InfoIcon />
+              </Avatar>
             </Link>
           </ListItemText>
-          <Avatar>
-            <InfoIcon />
-          </Avatar>
         </ListItem>
       </List>
     </div>
@@ -106,6 +109,7 @@ function Navigation () {
           >
             <MenuIcon />
           </IconButton>
+          <MediaCard />
         </Toolbar>
       </AppBar>
 
