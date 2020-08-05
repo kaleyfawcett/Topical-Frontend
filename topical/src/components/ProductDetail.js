@@ -47,11 +47,8 @@ function ProductDetail ({ searchResult }) {
   const getDetails = async () => {
     try {
       const result = await axios
-        .get(`https://shopical.herokuapp.com/api/product/${upc}/ingredients/`, {
-          headers: {
-            Authorization: 'Token 29174f9636c35eb521cb2ee74e7558dd5ecb3486'
-          }
-        })
+        .get(`https://shopical.herokuapp.com/api/product/${upc}/ingredients/`
+        )
       console.log(result)
       setName(result.data.name)
       setImage(result.data.image_url)
