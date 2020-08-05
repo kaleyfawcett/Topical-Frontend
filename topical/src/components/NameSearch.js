@@ -31,10 +31,11 @@ const Search = ({ onSearchResults }) => {
         <TextField
           label='Search' value={productName}
           onChange={event => setProductName(event.target.value)}
+          inputProps={{ 'aria-label': 'Enter search word here' }}
           InputProps={{
             endAdornment: (
               <InputAdornment>
-                <IconButton type='submit'>
+                <IconButton type='submit' aria-label='submit button'>
                   <SearchIcon color='inherit' />
                 </IconButton>
               </InputAdornment>

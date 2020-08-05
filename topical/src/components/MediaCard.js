@@ -18,7 +18,7 @@ export default function MediaCard () {
   const classes = useStyles()
 
   return (
-    <img src='https://i.imgur.com/eZjwKsY.png' className={classes.image} />
+    <img src='https://i.imgur.com/eZjwKsY.png' className={classes.image} alt='Topical logo' />
 
   )
 }
