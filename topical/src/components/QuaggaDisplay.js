@@ -23,6 +23,7 @@ function QuaggaDisplay ({ onSearchResults }) {
           {camera &&
             <div>
               <BarcodeSearch onSearchResults={onSearchResults} quaggaResult={quaggaResult} />
+              <br />
               <Scanner onDetected={onDetected} />
             </div>}
         </div>
