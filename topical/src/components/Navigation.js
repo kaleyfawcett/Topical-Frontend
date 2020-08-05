@@ -17,8 +17,9 @@ import InfoIcon from '@material-ui/icons/Info'
 import { Link } from 'react-router-dom'
 import MediaCard from './MediaCard'
 import Avatar from '@material-ui/core/Avatar'
+// import Link from '@material-ui/core/Link'
 
-const drawerWidth = 255
+const drawerWidth = 230
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex'
@@ -49,9 +50,6 @@ const useStyles = makeStyles(theme => ({
   closeMenuButton: {
     marginRight: 'auto',
     marginLeft: 0
-  },
-  link: {
-    textDecoration: 'none'
   }
 }))
 
@@ -67,33 +65,33 @@ function Navigation () {
       <List>
         <ListItem button>
           <ListItemText>
-            <Link to='/'>
+            <Link to='/' style={{ textDecoration: 'none', color: '#000' }}>
               <Typography
                 variant='h4'
-                className={classes.link}
               >
                 Search
               </Typography>
+              <Avatar>
+                <SearchIcon />
+              </Avatar>
             </Link>
           </ListItemText>
-          <Avatar>
-            <SearchIcon />
-          </Avatar>
         </ListItem>
+        <br />
         <br />
         <ListItem button>
           <ListItemText>
-            <Link to='/about'>
+            <Link to='/about' style={{ textDecoration: 'none', color: '#000' }}>
               <Typography
                 variant='h4'
               >
                 Information
               </Typography>
+              <Avatar>
+                <InfoIcon />
+              </Avatar>
             </Link>
           </ListItemText>
-          <Avatar>
-            <InfoIcon />
-          </Avatar>
         </ListItem>
       </List>
     </div>

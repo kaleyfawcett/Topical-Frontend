@@ -25,10 +25,6 @@ const styles = muiBaseTheme => ({
       justifyContent: 'center',
       maxWidth: 200,
       maxHeight: 20
-    },
-    resultLink: {
-      textDecoration: 'none',
-      color: 'inherit'
     }
   }
 })
@@ -43,8 +39,7 @@ const ProductCard = props => {
         <CardContent className={classes.content}>
           <Typography>
             <Link
-              to={`/product/${upc}/`}
-              className={classes.resultLink}
+              to={`/product/${upc}/`} style={{ textDecoration: 'none', color: '#000' }}
             >
               <div key={upc}>
                 <Typography
@@ -52,7 +47,7 @@ const ProductCard = props => {
                 >
                   {name}
                 </Typography>
-                <Typography className={classes.resultLink}>
+                <Typography>
                   {upc}
                 </Typography>
                 <CardMedia className={classes.media}>
