@@ -77,7 +77,7 @@ function ProductDetail ({ searchResult }) {
 
         {(!violations || !violations.length)
           ? <Typography variant='h6'>
-              Topical did not find any common irritants in this product.
+              Topical did not find any common irritants in this product
           </Typography>
 
           : (<>
@@ -90,6 +90,7 @@ function ProductDetail ({ searchResult }) {
 
             <Typography
               color='error'
+              variant='body1'
             >
               {violations.map((item, idx) => [
                 idx > 0 && ', ',
